@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Capítulo 1
 ---
 
 # Capítulo 1: Introdução às Boas Práticas de Programação
