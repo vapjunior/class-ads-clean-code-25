@@ -577,6 +577,7 @@ class PriceCalculationStrategyFactory {
 }
 ```
 
+
 #### Código Refatorado - Aplicando DRY, KISS e YAGNI
 
 ```php
