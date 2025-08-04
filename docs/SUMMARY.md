@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Sumário
 
 * [Introdução](README.md)
