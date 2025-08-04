@@ -1,0 +1,36 @@
+    version: '3.8'
+
+    services:
+      apache:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        ports:
+          - "80:80"
+        volumes:
+          - ./app:/var/www/html # Map your local app directory to the container's web root
+          - ./apache_conf:/etc/apache2/sites-available # Optional: for custom Apache configurations
+        depends_on:
+          - mysql
+
+      mysql:
+        image: mysql:8.0 # Or a specific MySQL version like mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: your_root_password # Change this to a strong password
+          MYSQL_DATABASE: your_database_name
+          MYSQL_USER: your_username
+          MYSQL_PASSWORD: your_password
+        volumes:
+          - ./mysql_data:/var/lib/mysql # Persistent storage for MySQL data
+        ports:
+          - "3306:3306" # Optional: if you need to connect from outside Docker
+
+      phpmyadmin: # Optional: for easy database management
+        image: phpmyadmin/phpmyadmin
+        links:
+          - mysql:db
+        ports:
+          - 8080:80
+        environment:
+          PMA_HOST: mysql
+          MYSQL_ROOT_PASSWORD: your_root_password
