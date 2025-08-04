@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Capítulo 1: Introdução às Boas Práticas de Programação
 
 ### A Inevitável Degradação do Código: Uma Realidade Técnica
